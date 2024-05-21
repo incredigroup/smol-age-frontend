@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 28% 11%;
+    --background-dark: 180, 40%, 15%;
+    --background-light: 233 24% 19%;
+    --foreground: 220 13% 91%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 220, 13%, 91%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 182 42% 18%;
+    --accent-dark: 182 43% 12%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply scroll-smooth border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .pixel-button {
+    clip-path: polygon(
+      0 10px,
+      10px 10px,
+      10px 0,
+      calc(100% - 10px) 0,
+      calc(100% - 10px) 10px,
+      100% 10px,
+      100% calc(100% - 10px),
+      calc(100% - 10px) calc(100% - 10px),
+      calc(100% - 10px) 100%,
+      10px 100%,
+      10px calc(100% - 10px),
+      0 calc(100% - 10px)
+    );
+  }
+
+  .yellow-background {
+    background-color: #ab6d1d !important;
+  }
+
+  .red-background {
+    background-color: #d12f2f !important;
+  }
+
+  .yellow-hr {
+    color: #ab6d1d !important;
+  }
+
+  .yellow-text {
+    color: #ab6d1d !important;
+  }
+
+  .period-selected {
+    background-color: green !important;
+  }
+
+  /* hide scrollbar but allow scrolling */
+  .hide-scrollbars {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+  }
+
+  .hide-scrollbars::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
+
+  .mask-top {
+    mask: linear-gradient(transparent, hsl(var(--background)) 3%);
+  }
+  .mask-bottom {
+    mask: linear-gradient(hsl(var(--background)) 97%, transparent);
+  }
+
+  .mask {
+    mask: linear-gradient(transparent, white 15%, white 85%, transparent);
+  }
+
+  .btn {
+    @apply rounded-xl border-4 border-smol-brown-light bg-smol-brown px-2 pb-1 pt-2 text-[.65rem] uppercase;
+  }
+
+  .text_shadow {
+    text-shadow: 3px 0 #000, -3px 0 #000, 0 3px #000, 0 -3px #000, 2px 2px #000, -2px -2px #000,
+      2px -2px #000, -2px 2px #000;
+  }
+
+  .absolute-center {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+.shadowfilter:hover {
+  -webkit-filter: drop-shadow(12px 2px 15px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(12px 2px 15px rgba(255, 255, 255, 0.5));
+}
+
+.shadowicon:hover {
+  -webkit-filter: drop-shadow(12px 2px 15px rgba(0, 255, 72, 0.5));
+  filter: drop-shadow(12px 2px 15px rgba(0, 99, 30, 0.5));
+}
+
+@font-face {
+  font-family: 'Dinopia';
+  src: url('/static/fonts/DinopiaLight.otf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
